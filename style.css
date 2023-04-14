@@ -2,10 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --background-color: #2a5152;
+    --background-color: #b1cece;
     --tile-background-color: #224344;
     --tile-shadow-color: #1e3c3d;
-    --text-color: #ffffff;
+    --subject-text-color: #224344;
+    --text-color: #b1cece;
+    --placeholder-text-color: #728686;
+    --main-button-hover-color: #224344e1;
+    --secondary-button-hover-color: ;
 }
 
 * {
@@ -18,7 +22,7 @@
 body {
     background-color: var(--background-color);
     font-size: 16px;
-    color: var(--text-color);
+    color: var(--subject-text-color);
 }
 
 .container {
@@ -32,7 +36,13 @@ body {
 .container h1 {
     margin-right: 50px;
     font-size: 4rem;
-    text
+    color: var(--subject-text-color);
+}
+
+.separator {
+    width: 5px;
+    height: 40vh;
+    background-color: var(--tile-background-color);
 }
 
 .board {
@@ -40,6 +50,7 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
     grid-template-rows: 1fr 1fr 1fr;
+    margin-left: 50px;
     transition: 0.3s gap ease;
 }
 
@@ -56,11 +67,148 @@ body {
     border-radius: 20px;
     background-color: var(--tile-background-color);
     font-size: 10rem;
+    color: var(--text-color);
     transition: 0.3s transform ease;
-    box-shadow: inset 0 0 10px var(--tile-shadow-color);
+    box-shadow: inset 0 0 14px var(--tile-shadow-color);
+    user-select: none;
 }
 
 .tile:hover {
     transform: scale(1.05);
     cursor: pointer;
+}
+
+.start {
+    margin-left: 50px;
+}
+
+.players-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.start input {
+    border: none;
+    margin-bottom: 20px;
+    width: 14vw;
+    min-width: 200px;
+    background-color: var(--subject-text-color);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: var(--text-color);
+}
+
+.start input:focus {
+    outline: none;
+    color: var(--text-color);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--placeholder-text-color);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--placeholder-text-color);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--placeholder-text-color);
+}
+
+.game-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.game-buttons button {
+    cursor: pointer;
+    height: 7.5rem;
+    width:7.5rem;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+}
+
+.start-game {
+    border: none;
+    background-color: var(--tile-background-color);
+    color: var(--text-color);
+    transition: 0.1s background-color ease;
+}
+
+.start-game:hover {
+    background-color: var(--main-button-hover-color);
+}
+
+.quick-start {
+    border: 2.5px solid var(--subject-text-color);
+    background-color: transparent;
+    color: var(--subject-text-color);
+    transition: 0.1s border ease;
+}
+
+.quick-start:hover {
+    border: 5px solid var(--subject-text-color);
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.player-turn {
+    font-size: 1.8rem;
+}
+
+.player-turn span {
+    color: var(--text-color);
+    background-color: var(--tile-background-color);
+    padding: 5px 10px;
+    margin: 0 5px;
+}
+
+.display-result {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    background-color: var(--tile-background-color);
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.display button {
+    cursor: pointer;
+    height: 7.5rem;
+    width:7.5rem;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+}
+
+.restart-game {
+    border: none;
+    background-color: var(--tile-background-color);
+    color: var(--text-color);
+}
+
+.restart-game:hover {
+    background-color: var(--main-button-hover-color);
+}
+
+.start-over {
+    border: 2.5px solid var(--subject-text-color);
+    background-color: transparent;
+    color: var(--subject-text-color);
+}
+
+.start-over:hover {
+    border: 5px solid var(--subject-text-color);
 }
